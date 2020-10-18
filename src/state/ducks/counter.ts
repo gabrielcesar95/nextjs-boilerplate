@@ -6,25 +6,25 @@ export const { Types, Creators } = createActions({
     reset: [],
 })
 
-const INITIAL_STATE = 0
+const COUNTER = 0
 
-const increment = (state = INITIAL_STATE) => {
-    state ++
-
-    return state
-}
-
-const decrement = (state = INITIAL_STATE) => {
-    state --
+const increment = (state = COUNTER): number => {
+    state++
 
     return state
 }
 
-const reset = (state = INITIAL_STATE) => {
-    return INITIAL_STATE
+const decrement = (state = COUNTER): number => {
+    state--
+
+    return state
 }
 
-export default createReducer(INITIAL_STATE, {
+const reset = (): number => {
+    return COUNTER
+}
+
+export default createReducer(COUNTER, {
     [Types.INCREMENT as string]: increment,
     [Types.DECREMENT as string]: decrement,
     [Types.RESET as string]: reset

@@ -10,7 +10,7 @@ interface MyAppProps {
   store: WithSagaTaskStore;
 }
 
-class CadCar extends App<MyAppProps> {
+class NextBoilerplate extends App<MyAppProps> {
   static async getInitialProps({ Component, ctx }: AppContext): Promise<AppInitialProps> {
     let pageProps = {};
 
@@ -31,4 +31,4 @@ class CadCar extends App<MyAppProps> {
   }
 }
 
-export default withRedux(createStore)(withReduxSaga(CadCar));
+export default withRedux(createStore)(withReduxSaga(NextBoilerplate));
